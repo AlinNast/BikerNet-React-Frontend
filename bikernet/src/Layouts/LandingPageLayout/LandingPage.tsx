@@ -11,7 +11,7 @@ function LandingPage() {
                 <div className='title'>BikerNet</div>
 
                 <div className="login" onClick={() => {setShowLogin(true)}}>Log In</div>
-                <LoginModal show={showLogin} />
+                <LoginModal show={showLogin} onClose={() => setShowLogin(false)} />
 
                 <div className="register">Join the brotherhood</div>
 
