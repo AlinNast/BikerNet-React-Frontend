@@ -2,7 +2,7 @@
 
 
  .main {
-    background-image: url('../../public/BikerNetBackground.jpg');
+    background-image: url('../../../public/BikerNetBackground.jpg');
     
     position: fixed;
     top: 0;
