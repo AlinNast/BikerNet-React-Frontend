@@ -19,6 +19,9 @@ This is the frontend for my personal project implemented BikerNet implemented wi
 
 ## Gallery
 
+![image](https://user-images.githubusercontent.com/70013669/185227085-b3c448a8-1016-4e1f-ad32-f393b9026c66.png)
+
+
 ## How to install:
  1. Clone this repo
  
