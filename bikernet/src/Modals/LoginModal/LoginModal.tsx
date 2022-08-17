@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import './LoginModal.css'
 
 function LoginModal(props:any) {
     const [userName, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
 
     const requestOptions = {
         method: 'POST',
@@ -20,6 +23,7 @@ function LoginModal(props:any) {
 
         if(response.ok){
             alert("login succes")
+            navigate("/Home");
         }
     }
 
