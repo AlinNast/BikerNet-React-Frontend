@@ -1,9 +1,26 @@
+import { useState } from 'react';
 import './LoginModal.css'
 
 function LoginModal(props:any) {
+    const [userName, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handleSubmit = () => {
-        console.log("Submit handled")
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(password)
+    };
+
+    const handleSubmit = async () => {
+        console.log("Submit handled");
+
+        const response = await fetch('https://localhost:5001/api/User/login?username='+userName, requestOptions);
+        console.log(requestOptions);
+        console.log(response);
+
+        if(response.ok){
+            alert("login succes")
+        }
     }
 
     if(!props.show){
@@ -17,7 +34,9 @@ function LoginModal(props:any) {
                     <h3>Log In</h3>
                 </div>
                 <div className="modal-body">
-                    <h4>form will be put here</h4>
+                    <input type="text" placeholder='Your UserName' onChange={(e) => setUsername(e.target.value)}/>
+                    <h5>* This will be displayed on your profile</h5>
+                    <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div className="modal-footer">
                     <button className="submit" onClick={handleSubmit}>Submit</button>

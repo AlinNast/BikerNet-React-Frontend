@@ -17,12 +17,13 @@ function RegisterModal(props:any) {
     const handleSubmit = async () => {
         console.log("Submit handled");
 
-        console.log(requestOptions);
-
         const response = await fetch('https://localhost:5001/api/User', requestOptions);
         console.log(response);
-        const data = await response.json();
-        console.log(data);
+
+        if(response.ok){
+            props.onClose();
+            alert("Registration successfull")
+        }
     }
     
 
@@ -43,7 +44,7 @@ function RegisterModal(props:any) {
                         <input type="text" placeholder='Your UserName' onChange={(e) => setUsername(e.target.value)}/>
                         <h5>* This will be displayed on your profile</h5>
                         <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)}/>
-                        <input type="password" placeholder='Password' onChange={(e) => setCheckPassword(e.target.value)}/>
+                        <input type="password" placeholder='Confirm Password' onChange={(e) => setCheckPassword(e.target.value)}/>
 
 
                     </form>
