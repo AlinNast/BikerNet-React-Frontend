@@ -6,8 +6,13 @@ function RegisterModal(props:any) {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [checkPassword, setCheckPassword] = useState('');
 
+    const [checkPassword, setCheckPassword] = useState('');
+    const [passwordMatch, setPasswordMatch] = useState(false);
+    const [isCPasswordDirty, setIsCPasswordDirty] = useState(false);
+    const [cPasswordClass, setCPasswordClass] = useState('pass-box')
+
+    // fetch stuff
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -25,6 +30,23 @@ function RegisterModal(props:any) {
             alert("Registration successfull")
         }
     }
+
+    const handleCheckPassword = (e:any) => {
+        setCheckPassword(e.target.value);
+        setIsCPasswordDirty(true);
+    }
+
+    useEffect(() => {
+        if (isCPasswordDirty) {
+            if (password === checkPassword) {
+                setPasswordMatch(true);
+                setCPasswordClass('pass-box-true')
+            } else {
+                setPasswordMatch(false)
+                setCPasswordClass('pass-box-false')
+            }
+        }
+    }, [checkPassword, password])
     
 
     if(!props.show){
@@ -35,22 +57,26 @@ function RegisterModal(props:any) {
         <div className="modal" onClick={props.onClose}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <div className="modal-header">
-                    <h3>register</h3>
+                    <h3 className='modal-header-title'>Register</h3>
                 </div>
                 <div className="modal-body">
                     <form>
                         <input type="text" placeholder='Your Name' onChange={(e) => setName(e.target.value)}/>
                         <input type="text" placeholder='Your Email' onChange={(e) => setEmail(e.target.value)}/>
                         <input type="text" placeholder='Your UserName' onChange={(e) => setUsername(e.target.value)}/>
-                        <h5>* This will be displayed on your profile</h5>
-                        <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)}/>
-                        <input type="password" placeholder='Confirm Password' onChange={(e) => setCheckPassword(e.target.value)}/>
+
+                        {password.length < 8 ? <h4>* Password has to be 8 characters long</h4> : ""}
+                        <input type="password" placeholder='Password' className={"pass-box"} onChange={(e) => setPassword(e.target.value)}/>
+                        <input type="password" placeholder='Confirm Password' className={cPasswordClass} onChange={(e) => handleCheckPassword(e)}/>
+                        {isCPasswordDirty && !passwordMatch ? <h4>Password dont match</h4>: ''}
 
 
                     </form>
                 </div>
                 <div className="modal-footer">
-                    <button className="submit" onClick={handleSubmit}>Submit</button>
+                    {password.length >=8 && passwordMatch && name !== '' && email.includes('@') && username !== '' ? 
+                    <button className="submit" onClick={handleSubmit} >Submit</button> : ''}
+                    {/* && name != '' && email.includes('@') && username != '' */}
                 </div>
             </div>
         </div>
