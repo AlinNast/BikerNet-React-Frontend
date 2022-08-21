@@ -22,8 +22,11 @@ function LoginModal(props:any) {
         console.log(response);
 
         if(response.ok){
-            alert("login succes")
+            alert("login succes");
             navigate("/Home");
+        }
+        else{
+            alert("login failed");
         }
     }
 
@@ -34,16 +37,15 @@ function LoginModal(props:any) {
     return(
         <div className="modal" onClick={props.onClose}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
-                <div className="modal-header">
-                    <h3>Log In</h3>
+                <div className="modal-header-login">
+                    <h3 className='modal-header-title'>Log In</h3>
                 </div>
                 <div className="modal-body">
                     <input type="text" placeholder='Your UserName' onChange={(e) => setUsername(e.target.value)}/>
-                    <h5>* This will be displayed on your profile</h5>
-                    <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="password" placeholder='Password' className='pass-box' onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div className="modal-footer">
-                    <button className="submit" onClick={handleSubmit}>Submit</button>
+                    <button className="submit" onClick={handleSubmit}>Log in</button>
                 </div>
             </div>
         </div>

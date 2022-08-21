@@ -22,7 +22,7 @@ h4{
     margin-right: auto;
     margin-left: auto;
     position: relative;
-    width: 500px;
+    width: 30rem;
     background-color: aliceblue;
 }
 
@@ -40,7 +40,7 @@ h4{
     position: relative;
     color: white;
     font-size: 3rem;
-    margin-top: -3rem;
+    margin-top: -5rem;
     text-align: center;
 }
 
