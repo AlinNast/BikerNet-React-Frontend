@@ -1,10 +1,16 @@
-
+import Navbar from '../../Components/Navbar';
+import './HomePage.css';
 
 function HomePage() {
     return(
         <>
-        <h1>navbar</h1>
-        <h2>content</h2>
+        <Navbar />
+        <div className="grid-container">
+            <div className="side-menu">side menu</div>
+            <div className="form">form</div>
+            <div className="feed">feed</div>
+            <div className="news">news</div>
+        </div>
         </>
     )
 }

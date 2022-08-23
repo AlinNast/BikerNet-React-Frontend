@@ -1,0 +1,48 @@
+
+
+.grid-container{
+    display: grid;
+    height: 100%;
+    grid-column-gap: 30px;
+    grid-row-gap: 25px;
+    grid-template-columns: [first] 1.5fr [line2]3fr [line3]1fr [end];
+    grid-template-rows: [first] 10rem [line2] 30rem [line3] 80rem [end];
+}
+
+.side-menu{
+    position: sticky;
+    top: 0;
+    height: 90vh;
+    box-sizing: border-box;
+
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: blue;
+}
+
+.form{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: blueviolet;
+}
+
+.feed{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: red;
+}
+
+.news{
+    position: sticky;
+    top: 0;
+    height: 90vh;
+    box-sizing: border-box;
+
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: green;
+}
