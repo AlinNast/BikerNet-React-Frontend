@@ -6,12 +6,14 @@ This is the frontend for my personal project implemented BikerNet implemented wi
 ## Features:
  - The user can Register
  - The user can log in
+ - The user can see the posts in the feed
 
 ## What I,ve learned:
  - How to create a react app
  - How to implement React router
  - React hooks (UseState, UseEffect, UseNavigator)
- - How to use fetch
+ - How to use fetch and async functions
+
 
 ## Challanges:
  - Making the fetch body match the required backend object

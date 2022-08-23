@@ -27,7 +27,7 @@ function RegisterModal(props:any) {
 
         if(response.ok){
             props.onClose();
-            alert("Registration successfull")
+            alert("Registration successfull");
         }
     }
 
@@ -42,7 +42,7 @@ function RegisterModal(props:any) {
                 setPasswordMatch(true);
                 setCPasswordClass('pass-box-true')
             } else {
-                setPasswordMatch(false)
+                setPasswordMatch(false);
                 setCPasswordClass('pass-box-false')
             }
         }
@@ -76,7 +76,6 @@ function RegisterModal(props:any) {
                 <div className="modal-footer">
                     {password.length >=8 && passwordMatch && name !== '' && email.includes('@') && username !== '' ? 
                     <button className="submit" onClick={handleSubmit} >Submit</button> : ''}
-                    {/* && name != '' && email.includes('@') && username != '' */}
                 </div>
             </div>
         </div>
