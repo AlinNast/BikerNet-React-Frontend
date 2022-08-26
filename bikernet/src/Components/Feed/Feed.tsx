@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Post from '../Post/Post';
 import './Feed.css'
 
 function Feed(){
@@ -13,10 +14,7 @@ function Feed(){
     useEffect( () => {
         const fetchData = async () => {
             const repsonse = await fetch('https://localhost:5001/api/FeedPost', requestOptions);
-            console.log(repsonse);
-            const data = await repsonse.json();
-            console.log(data);
-            
+            const data = await repsonse.json();            
             setPosts(data)
         } 
         fetchData();
@@ -24,10 +22,13 @@ function Feed(){
 
     return(
         <div className='feed-container'>
-        <h1>feed</h1>
-        {posts.map((item:any)=>{
-            return (<li key={item.id}>{item.title}</li>);
-        })}
+            {posts.map((item:any)=>{
+                return (
+                    <>
+                        <Post key={item.id} data={item} />
+                    </>
+                );
+            })}
         </div>
     )
 }

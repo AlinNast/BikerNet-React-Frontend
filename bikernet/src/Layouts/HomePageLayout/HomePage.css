@@ -1,6 +1,12 @@
 
 
+/* .home-container{
+    margin-top: -20px;
+} */
+
 .grid-container{
+    background-color: rgb(92, 27, 3);
+    /* margin-top: 50px; */
     display: grid;
     height: 100%;
     grid-column-gap: 30px;
@@ -10,6 +16,7 @@
 }
 
 .side-menu{
+    margin-top: 2rem;
     position: sticky;
     top: 0;
     height: 90vh;
@@ -18,24 +25,23 @@
     grid-column-start: 1;
     grid-row-start: 1;
     grid-row-end: 3;
-    background-color: blue;
+    background-color: rgb(57, 57, 61);
 }
 
 .form{
     grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: 2;
-    background-color: blueviolet;
 }
 
 .feed{
     grid-column-start: 2;
     grid-row-start: 2;
     grid-row-end: 4;
-    background-color: red;
 }
 
 .news{
+    margin-top: 2rem;
     position: sticky;
     top: 0;
     height: 90vh;
@@ -44,5 +50,5 @@
     grid-column-start: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-    background-color: green;
+    background-color: rgb(61, 67, 61);
 }
