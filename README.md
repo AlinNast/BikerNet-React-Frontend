@@ -23,6 +23,7 @@ This is the frontend for my personal project implemented BikerNet implemented wi
 
 ![image](https://user-images.githubusercontent.com/70013669/185227085-b3c448a8-1016-4e1f-ad32-f393b9026c66.png)
 ![image](https://user-images.githubusercontent.com/70013669/185786799-fd668c97-0c6a-4c2a-96b0-38bb34738ed4.png)
+![image](https://user-images.githubusercontent.com/70013669/186967749-f8e99299-aac1-48c1-97bf-5b22955c4403.png)
 
 
 
