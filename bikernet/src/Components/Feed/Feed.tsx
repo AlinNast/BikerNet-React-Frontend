@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Post from '../Post/Post';
 import './Feed.css'
 
-function Feed(){
+function Feed() {
     const [posts, setPosts] = useState([]);
 
     const requestOptions = {
@@ -10,19 +10,19 @@ function Feed(){
         headers: { 'Content-Type': 'application/json' }
     }
 
-
-    useEffect( () => {
+    useEffect(() => {
         const fetchData = async () => {
             const repsonse = await fetch('https://localhost:5001/api/FeedPost', requestOptions);
-            const data = await repsonse.json();            
+            const data = await repsonse.json();
             setPosts(data)
-        } 
+        }
         fetchData();
     }, []);
 
-    return(
+    
+    return (
         <div className='feed-container'>
-            {posts.map((item:any)=>{
+            {posts.map((item: any) => {
                 return (
                     <>
                         <Post key={item.id} data={item} />

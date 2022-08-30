@@ -19,13 +19,15 @@ function LoginModal(props:any) {
 
         const response = await fetch('https://localhost:5001/api/User/login?username='+userName, requestOptions);
         const user = await response.json();
+        console.log(user);
        
 
 
         if(response.ok){
             alert("login succes");
             window.sessionStorage.setItem("userName", user.userName);
-            window.sessionStorage.setItem("userId", user.Id);
+            window.sessionStorage.setItem("userId", user.id);
+            console.log(window.sessionStorage.getItem("userId"));
             window.sessionStorage.setItem("userEmail", user.email);
             navigate("/Home");
         }

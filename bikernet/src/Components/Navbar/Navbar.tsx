@@ -23,7 +23,6 @@ function Navbar() {
             <h2 className='username'>Hello {userName}</h2>
             
             <Link to="/home" className='home-button'>Home</Link>
-            
         </div>
     )
 }
